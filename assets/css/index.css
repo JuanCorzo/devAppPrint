@@ -1,0 +1,48 @@
+body {
+    background: url(../img/background.jpg) no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    height: 100vh;
+}
+.containerCenter {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.divLogin{
+    background: whitesmoke;
+    height: 230px;
+    width: 80%;
+    border-radius: 5pt;
+    -webkit-box-shadow: 1px 3px 37px 3px rgba(0,0,0,0.75);
+    -moz-box-shadow: 1px 3px 37px 3px rgba(0,0,0,0.75);
+    box-shadow: 1px 3px 37px 3px rgba(0,0,0,0.75);
+}
+.bordersGreen{
+    border: 1px solid #18a689;
+}
+.width100porciento{
+    width: 100%;
+}
+.fontSizeMasBig{
+    font-size: 19pt !important;
+}
+.fontSizeBig{
+    font-size: 15pt !important;
+}
+.margin_top_medium{
+    margin-top: 20px !important;
+}
+.margin_top_small{
+    margin-top: 10px !important;
+}
+.fontBold{
+    font-weight: bold;
+}
+.paddingSuperiores10px{
+    padding-top: 10px;
+    padding-bottom: 10px;
+}

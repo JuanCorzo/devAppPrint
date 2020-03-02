@@ -24,6 +24,6 @@
 
 <gap:plugin name="de.appplant.cordova.plugin.printer" />
 
-<icon src="assets/img/icon.png" platform="android">
+<icon src="assets/img/icon.png" platform="android" />
 
 </widget>

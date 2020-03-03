@@ -15,7 +15,18 @@
     LM SOLUCIONES
 </author>
 
+<content src="index.html" />
+<access origin="*" />
+
+<allow-intent href="http://*/*" />
+<allow-intent href="https://*/*" />
+<allow-intent href="tel:*" />
+<allow-intent href="sms:*" />
+<allow-intent href="mailto:*" />
+<allow-intent href="geo:*" />
+
 <plugin name="de.appplant.cordova.plugin.printer" />
+<plugin name="cordova-plugin-whitelist" />
 
 <icon src="assets/img/icon.png" />
 

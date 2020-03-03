@@ -4,7 +4,7 @@
 		xmlns="http://www.w3.org/ns/widgets" 
 		xmlns:gap="https://phonegap.com/ns/1.0" >
 
-<name>dev App Print</name>
+<name>Dev App Print</name>
 
 <description>
     Impresion de ticketes para transferencias de pasajeros
@@ -14,8 +14,8 @@
     LM SOLUCIONES
 </author>
 
-<gap:plugin name="de.appplant.cordova.plugin.printer" />
+<plugin name="de.appplant.cordova.plugin.printer" spec="0.7.1" source="pgb" />
 
-<icon src="assets/img/icon.png" platform="android" />
+<icon src="assets/img/icon.png" />
 
 </widget>

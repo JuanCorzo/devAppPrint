@@ -29,6 +29,19 @@
   <js-module src="assets/js/PrintPlugin.js" name="PrintPlugin">
     <clobbers target="window.PrintPlugin" />
   </js-module>
+
+    <!-- ios -->
+  <platform name="ios">
+   <config-file target="config.xml" parent="/*">
+     <feature name="PrintPlugin">
+       <param name="ios-package" value="PrintPlugin" />
+     </feature>
+   </config-file>
+
+   <header-file src="src/ios/PrintPlugin.h" />
+   <source-file src="src/ios/PrintPlugin.m" />
+  </platform>
+
 </plugin>
 
 <icon src="assets/img/icon.png" />

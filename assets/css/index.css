@@ -46,3 +46,10 @@ body {
     padding-top: 10px;
     padding-bottom: 10px;
 }
+.btnLocal{
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    font-weight: 500;
+    padding: 2px 15px;
+}

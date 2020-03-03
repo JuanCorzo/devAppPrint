@@ -14,7 +14,22 @@
     LM SOLUCIONES
 </author>
 
-<plugin name="de.appplant.cordova.plugin.printer" spec="0.7.1" source="pgb" />
+<plugin xmlns="http://www.phonegap.com/ns/plugins/1.0"
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  id="com.badrit.PrintPlugin"
+  version="0.1.0">
+  <name>PrintPlugin</name>
+  <description>Cordova Print Plugin</description>
+  <license>Apache 2.0</license>
+  <keywords>cordova,PrintPlugin</keywords>
+
+  <dependency id="org.apache.cordova.device" url="https://github.com/apache/cordova-plugin-device.git" />
+  <dependency id="org.apache.cordova.inappbrowser" url="https://github.com/apache/cordova-plugin-inappbrowser.git" />
+
+  <js-module src="assets/js/PrintPlugin.js" name="PrintPlugin">
+    <clobbers target="window.PrintPlugin" />
+  </js-module>
+</plugin>
 
 <icon src="assets/img/icon.png" />
 

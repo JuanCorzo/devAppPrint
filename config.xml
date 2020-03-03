@@ -16,6 +16,7 @@
 </author>
 
 <plugin name="cordova-plugin-x-toast" spec="~2.7.2" />
+<plugin name="cordova-plugin-printer"/>
 
 <icon src="assets/img/icon.png" />
 

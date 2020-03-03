@@ -12,10 +12,9 @@ $(function () {
 		    alert('printing finished or canceled')
 		});*/
 
-        var type = "text/html";
-        var title = "test.html";
-        var fileContent = "<html>Phonegap Print Plugin</html>";
-        window.plugins.PrintPlugin.print(fileContent,function(){console.log('success')},function(){console.log('fail')},"",type,title);
+        document.addEventListener('deviceready', function () {
+            cordova.plugins.printer.print('<h1>Hello World!</h1>');
+        }, false);
 
     }
 

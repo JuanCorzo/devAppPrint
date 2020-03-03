@@ -35,7 +35,11 @@ $(function () {
             alert("Debe digitar un vehiculo valido");
             return false;
         }
-        createTicket($("#inpVehiculo").val());
+        //createTicket($("#inpVehiculo").val());
+
+        localStorage.setItem("lastname", "Smith");
+
+        alert(localStorage.getItem("lastname"));
  	});
 
 

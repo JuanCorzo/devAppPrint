@@ -12,9 +12,11 @@ $(function () {
 		    alert('printing finished or canceled')
 		});*/
 
-        document.addEventListener('deviceready', function () {
-            cordova.plugins.printer.print('<h1>Hello World!</h1>');
-        }, false);
+        // Get HTML string
+        var page = document.body.innerHTML;
+
+        // Pass the HTML
+        window.plugin.printer.print(page);
 
     }
 
@@ -22,8 +24,10 @@ $(function () {
         printTiquete($("#inpNumTiquete").val());
  	});
 
-    document.addEventListener('deviceready', function () {
-        cordova.plugins.printer.print('<h1>Hello World!</h1>');
-    }, false);
+    window.plugin.printer.isServiceAvailable(
+        function (isAvailable) {
+            alert(isAvailable ? 'Service is available' : 'Service NOT available');
+        }
+    );
 
 });

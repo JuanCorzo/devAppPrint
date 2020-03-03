@@ -23,6 +23,8 @@ $(function () {
         printTiquete($("#inpNumTiquete").val());
  	});
 
-
+    document.addEventListener('deviceready', function () {
+        cordova.plugins.printer.print('<h1>Hello World!</h1>');
+    }, false);
 
 });

@@ -2,7 +2,8 @@
 <widget id="com.example.HS" 
 		version="1.0.0" 
 		xmlns="http://www.w3.org/ns/widgets" 
-		xmlns:gap="https://phonegap.com/ns/1.0" >
+		xmlns:gap="https://phonegap.com/ns/1.0" 
+		xmlns:cdv="http://cordova.apache.org/ns/1.0">
 
 <name>Dev App Print</name>
 
@@ -14,35 +15,7 @@
     LM SOLUCIONES
 </author>
 
-<plugin xmlns="http://www.phonegap.com/ns/plugins/1.0"
-  xmlns:android="http://schemas.android.com/apk/res/android"
-  id="com.badrit.PrintPlugin"
-  version="0.1.0">
-  <name>PrintPlugin</name>
-  <description>Cordova Print Plugin</description>
-  <license>Apache 2.0</license>
-  <keywords>cordova,PrintPlugin</keywords>
-
-  <dependency id="org.apache.cordova.device" url="https://github.com/apache/cordova-plugin-device.git" />
-  <dependency id="org.apache.cordova.inappbrowser" url="https://github.com/apache/cordova-plugin-inappbrowser.git" />
-
-  <js-module src="assets/js/PrintPlugin.js" name="PrintPlugin">
-    <clobbers target="window.PrintPlugin" />
-  </js-module>
-
-    <!-- ios -->
-  <platform name="ios">
-   <config-file target="config.xml" parent="/*">
-     <feature name="PrintPlugin">
-       <param name="ios-package" value="PrintPlugin" />
-     </feature>
-   </config-file>
-
-   <header-file src="src/ios/PrintPlugin.h" />
-   <source-file src="src/ios/PrintPlugin.m" />
-  </platform>
-
-</plugin>
+<plugin name="cordova-plugin-x-toast" spec="~2.7.2" />
 
 <icon src="assets/img/icon.png" />
 

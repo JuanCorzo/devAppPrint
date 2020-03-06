@@ -47,11 +47,11 @@ $(function () {
     }
 
     function printTiquete(num) {
-    	window.plugin.printer.isServiceAvailable(
+    	/*window.plugin.printer.isServiceAvailable(
 		    function (isAvailable, installedAppIds) {
 		        alert('The following print apps are installed on your device: ' + installedAppIds.join(', '));
 		    }
-		);
+		);*/
 
         last_numero = num;
         var StringTiquete = '<!DOCTYPE html><html><head><meta charset="utf-8"/><style type="text/css"> *{font-size: 30px; font-family: "arial";}body,html{margin:0}.ticket{width: 280px; max-width: 280px;}.centered{text-align: center; align-content: center;}.fontBold{font-weight: bold}.fontNoBold{font-weight: normal}.classNum{font-size:30px; font-weight: bold; margin:10px}.marginBottom{margin-bottom:0px}.margin0{margin:0}</style></head><body><div class="ticket"><p class="centered fontBold marginBottom">LA CAROLINA<br><span class="fontNoBold">Transfer Villa Carolina</span></p><div class="centered"><img src="https://chart.googleapis.com/chart?cht=qr&chl='+num+'&chs=180x180&choe=UTF-8&chld=L|2" alt="QR Code"><a href="https://es.qr-code-generator.com/a1/?ut_source=google_c&ut_medium=cpc&ut_campaign=spanish_top_kw&ut_content=qr_code_generator_exact&ut_term=generador%20de%20codigos%20qr_e&gclid=Cj0KCQiAhojzBRC3ARIsAGtNtHVR4ano96pNLLk4FQjQ0O9JCEqFI-rVivbV1YjDcmGSlzlLVQIS4McaApgaEALw_wcB" border="0" style="cursor:default" rel="nofollow"></a></div><p class="centered classNum margin0">'+num+'</p><p class="centered">Gracias por usar nuestros servicios! <br>lacarolina.com.co</p></div><p style="page-break-before: always"></p><br><br></body></html>';

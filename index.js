@@ -20,13 +20,13 @@ $(function () {
                         alert(res.message);
                     }else{
                         saveLocal(vehiculo);
-                        printTiquete(last_numero+1);
+                        printTiquete(parseInt(last_numero)+1);
                     }
                 }
             },
             error: function(res) {  
                 saveLocal(vehiculo);
-                printTiquete(last_numero+1);
+                printTiquete(parseInt(last_numero)+1);
             }
         });
     }
@@ -48,7 +48,15 @@ $(function () {
 
     function printTiquete(num) {
         last_numero = num;
-        var StringTiquete = '<style type="text/css"> *{font-size: 20px; font-family: "arial";}body,html{margin:0}td,th,tr,table{border-top: 1px solid black; border-collapse: collapse;}td,th,.ticket{width: 240px; max-width: 240px;}.centered{text-align: center; align-content: center;}.title{font-weight: bold}.fontNoBold{font-weight: normal}.classNum{font-size:30px; font-weight: bold; margin:10px}@media print{.hidden-print, .hidden-print *{display: none !important;}}</style> <div class="ticket"><p class="centered title">LA CAROLINA<br><span class="fontNoBold">Transfer Villa Carolina</span></p><table><thead><tr><th>TIQUETE NUMERO</th></tr></thead><tbody><tr><td></td></tr></tbody></table> <p class="centered classNum">'+num+'</p><p class="centered">Gracias por usar nuestros servicios! <br>lacarolina.com.co</p></div><br><br><br></body></html>';
+        var StringTiquete = '<!DOCTYPE html><html><head><meta charset="utf-8"/><style type="text/css"> *{font-size: 20px; font-family: "arial";}body,html{margin:0}.ticket{width: 240px; max-width: 240px;}.centered{text-align: center; align-content: center;}.fontBold{font-weight: bold}.fontNoBold{font-weight: normal}.classNum{font-size:30px; font-weight: bold; margin:10px}.marginBottom{margin-bottom:0px}.margin0{margin:0}</style></head><body><div class="ticket"><p class="centered fontBold marginBottom">LA CAROLINA<br><span class="fontNoBold">Transfer Villa Carolina</span></p><div class="centered"><img src="https://chart.googleapis.com/chart?cht=qr&chl='+num+'&chs=180x180&choe=UTF-8&chld=L|2" alt="QR Code"><a href="https://es.qr-code-generator.com/a1/?ut_source=google_c&ut_medium=cpc&ut_campaign=spanish_top_kw&ut_content=qr_code_generator_exact&ut_term=generador%20de%20codigos%20qr_e&gclid=Cj0KCQiAhojzBRC3ARIsAGtNtHVR4ano96pNLLk4FQjQ0O9JCEqFI-rVivbV1YjDcmGSlzlLVQIS4McaApgaEALw_wcB" border="0" style="cursor:default" rel="nofollow"></a></div><p class="centered classNum margin0">'+num+'</p><p class="centered">Gracias por usar nuestros servicios! <br>lacarolina.com.co</p></div><br><br></body></html>';
+        /*newWin = window.open("");
+	    newWin.document.write(StringTiquete);
+	    newWin.document.close();
+	    newWin.onload = function() {
+            newWin.focus();
+            newWin.print();
+            newWin.close();
+        };*/
         window.plugin.printer.print(StringTiquete);
     }
 
@@ -100,7 +108,7 @@ $(function () {
             alert("Debe digitar un vehiculo valido");
             return false;
         }
-        createTicket($("#inpVehiculo").val());
+        printTiquete($("#inpVehiculo").val());
  	});
 
     $("#btnLocal").click(function(){

@@ -46,9 +46,26 @@ $(function () {
         });
     }
 
+    function getFechaHora(){
+    	let today = new Date();
+    	let day = (today.getDate() < 10) ? '0' + today.getDate() : today.getDate();
+		let m = today.getMonth() + 1;
+		let mes = (m < 10) ? '0' + m : m;
+		let strDate = (day + '/' + mes + '/' + today.getFullYear());
+		/* *********************** */
+		let hours = today.getHours();
+		let minutes = today.getMinutes();
+		let ampm = hours >= 12 ? 'PM' : 'AM';
+		hours = hours % 12;
+		hours = hours ? hours : 12;
+		minutes = minutes < 10 ? '0'+minutes : minutes;
+		let strTime = hours + ':' + minutes + ' ' + ampm;
+		return strDate+" "+strTime;
+    }
+
     function printTiquete(num) {
         last_numero = num;
-        var StringTiquete = '<!DOCTYPE html><html><head><meta charset="utf-8"/><style type="text/css"> *{font-size: 20px; font-family: "arial";}body,html{margin:0}.centered{text-align: center; align-content: center;}.fontBold{font-weight: bold}.fontNoBold{font-weight: normal}.fontTitle{font-size:32px}.marginBottom{margin-bottom:0px}.margin0{margin:0}</style></head><body><div class="ticket"><p class="centered fontBold marginBottom fontTitle">LA CAROLINA<br><span class="fontNoBold">Transfer Villa Carolina</span></p><div class="centered"><img src="https://chart.googleapis.com/chart?cht=qr&chl='+num+'&chs=220x220&choe=UTF-8&chld=L|2" alt="QR Code"><a href="https://es.qr-code-generator.com/a1/?ut_source=google_c&ut_medium=cpc&ut_campaign=spanish_top_kw&ut_content=qr_code_generator_exact&ut_term=generador%20de%20codigos%20qr_e&gclid=Cj0KCQiAhojzBRC3ARIsAGtNtHVR4ano96pNLLk4FQjQ0O9JCEqFI-rVivbV1YjDcmGSlzlLVQIS4McaApgaEALw_wcB" border="0" style="cursor:default" rel="nofollow"></a></div><p class="centered fontBold margin0" style="font-size:45px">'+num+'</p><p class="centered" style="margin-top:10px; margin-bottom:1300px; font-size:15px">Gracias por usar nuestros servicios! <br>lacarolina.com.co</p></div><br><br></body></html>';
+        var StringTiquete = '<!DOCTYPE html><html><head><meta charset="utf-8"/><style type="text/css"> *{font-size: 23px; font-family: "arial";}body,html{margin:0;-webkit-print-color-adjust: exact;}.centered{text-align: center; align-content: center;}.fontBold{font-weight: bold}.fontNoBold{font-weight: normal}.margin0{margin:0}</style></head><body><div><div class="centered"><img src="assets/img/logo.png" alt="LOGO" style="width:150px"></div><p class="centered margin0">Tiquete Transfer</p><div class="centered"><img src="https://chart.googleapis.com/chart?cht=qr&chl='+num+'&chs=220x220&choe=UTF-8&chld=L|2" alt="QR Code"><a href="https://es.qr-code-generator.com/a1/?ut_source=google_c&ut_medium=cpc&ut_campaign=spanish_top_kw&ut_content=qr_code_generator_exact&ut_term=generador%20de%20codigos%20qr_e&gclid=Cj0KCQiAhojzBRC3ARIsAGtNtHVR4ano96pNLLk4FQjQ0O9JCEqFI-rVivbV1YjDcmGSlzlLVQIS4McaApgaEALw_wcB" border="0" style="cursor:default" rel="nofollow"></a></div><p class="centered fontBold margin0" style="font-size:45px; margin-top: -20px">'+num+'</p><p class="centered" style="margin-top:10px; margin-bottom:0px; font-size:17px">'+getFechaHora()+'</p><p class="centered fontBold" style="margin-top:5px; margin-bottom:0px;"><span style="font-size:17px; background: black !important;border-radius: 15px;color: white !important;padding: 4px 15px;">VALIDO POR 1 HORA</span></p><p class="centered" style="margin-top:15px; font-size:17px">Gracias por usar nuestros servicios! <br>lacarolina.com.co</p></div><br><br></body></html>';
         /*newWin = window.open("");
 	    newWin.document.write(StringTiquete);
 	    newWin.document.close();
@@ -104,10 +121,6 @@ $(function () {
     }
 
  	$("#btnPrint").click(function(){
-        if($("#inpVehiculo").val() == "" || $("#inpVehiculo").val().length != size_codigo){
-            alert("Debe digitar un vehiculo valido");
-            return false;
-        }
         printTiquete($("#inpVehiculo").val());
  	});
 
